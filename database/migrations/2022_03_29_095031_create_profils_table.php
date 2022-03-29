@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("name");
             $table->integer("age");
             $table->string("phone");
-            $table->foreignId("user_id")->constrained("users", "id");
+            $table->foreignId("user_id")->constrained("users", "id")->onDelete("cascade")->onUpdate("cascade");
             $table->timestamps();
         });
     }
